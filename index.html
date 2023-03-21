@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/style.css" />
+    <script src="script/database.js"></script>
+    <script src="script/index.js" defer></script>
     
     <title>Weartake</title>
   </head>
@@ -15,31 +17,31 @@
         <h1>Weartake</h1>
         <nav>
           <ul class="header-menu">
-            <li>Todos</li>
-            <li>Acessórios</li>
-            <li>Camisetas</li>
+            <li class="Todos">Todos</li>
+            <li class="Acessórios" >Acessórios</li>
+            <li class="Camisetas" >Camisetas</li>
           </ul>
         </nav>
       </div>
     </header>
     <main>
       <section class="main-cards">
-        <ul></ul>
+        <ul class="clothes-card"></ul>
       </section>
       <section class="main-details">
         <div class="main-search">
-          <input
+          <input id="searched-item"
             class="search-input"
             type="text"
             placeholder="Digite aqui sua pesquisa"
           />
-          <button class="search-button">Pesquisar</button>
+          <button id="searchItems" class="search-button">Pesquisar</button>
         </div>
         <aside>
           <div class="cart-title">
             <h4>Carrinho de compras</h4>
           </div>
-          <div class="cart-empty">
+          <div class="cart-empty ">
             <h5>Carrinho Vazio</h5>
             <p>Adicione Itens</p>
           </div>
@@ -49,16 +51,13 @@
           </div>
           <div class="cart-details">
             <div class="details-values">
-              <p>Quantidade:</p><span>0</span>
+              <p>Quantidade:</p><span class="count">0</span>
             </div>
             <div class="details-values">
               <p>Total:</p>
-              <span>R$0,00</span>
+              <span class="valueItems">0,00</span>
             </div>
-
           </div>
-
-          
           </div>
         </aside>
       </section>
