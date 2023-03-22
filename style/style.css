@@ -49,7 +49,215 @@ main {
   display: flex;
   flex-direction: row;
   font-family: Inter, sans-serif;
+  
 }
+
+.clothes-card{
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    gap: 15px 15px;
+    flex-direction: row;
+    flex-wrap: wrap;display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 15px;
+    padding: 15px;
+    object-position: center;
+    line-height: 1.6;
+}
+
+
+.cards-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #f5f5f5;
+  width: 270px;
+  height: 450px;
+  box-sizing: border-box;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.cards-list p {
+  cursor: pointer;
+}
+
+.shopping-detallhesitem{
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #f5f5f5;
+  padding-left: 8px;
+}
+
+.shopping-detallhesitem p{
+  
+  font: 14px;
+  font-weight: 400;
+}
+
+.shopping-detallhesitem h2{
+  color: #333333;
+  font: 20px;
+  font-weight: bold;
+}
+
+.removeItem{
+  cursor: pointer;
+  color: #333333;
+  font-size: 24px;
+  font-weight: 600;
+  border: none;
+  width: 50px;
+  height: 40px;
+  transition: box-shadows 0.3s ease, transform 0.3s ease;
+}
+
+.removeItem:active{
+  box-shadow: 0px 0px 0px -5px #868383;
+}
+
+.removeItem:hover{
+  background-color: hsla(340, 87%, 24%, 0.094);
+  border: 2px solid transparent;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px -5px #868383;
+  animation: spin 3s linear infinite, inset 2px 2px 2px #868383;
+  transform: translate(2px, 2px);
+}
+
+.priceItemShopp{
+  color: #37268C;
+
+}
+
+.showcasePrice{
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 15px;
+  color: #2e245e;
+}
+
+.showcaseTag{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 70px;
+  height: 1px;
+  align-items: center;
+  font-size: 16px;
+  background-color: #2e245e;
+  color: #ffffff;
+  flex-wrap: nowrap;
+  border-radius: 5px;
+}
+.showcaseName{
+  display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 15px;
+}
+.showcaseDescription{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 300;
+  padding-left: 15px;
+}
+
+.showcaseTag{
+ padding: 25px;
+
+}
+
+.box img {
+  image-rendering: pixelated;
+  object-position: center;
+  border: none
+}
+
+.box:hover{
+  box-shadow: 15px 15px 10px -5px #868383;
+}
+
+
+.cart-products{
+  display: none;
+  flex-direction: row;
+  height: 60%;
+  width: 100%;
+  max-height: 500px;
+  overflow-y: auto;
+  background-color: #f5f5f5;
+}
+
+.shopping-card{
+  display: flex;
+  justify-content: space-evenly;
+  height: 100px;
+  row-gap: 5px;
+  border: 1px solid transparent;
+  
+
+}
+.shopping-card:hover{
+  border: 2px solid #8683835b;
+  box-shadow: 5px 5px 5px -5px #868383;
+  gap: 5px;
+  
+  
+}
+
+.shopping-card img{
+  width: 40%;
+  height: auto;
+
+}
+
+.clothesAdd{
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  border: none;
+}
+
+#divAddItem {
+  color: #ffffff;
+  cursor: pointer;
+  transition: box-shadows 0.1s ease, transform 0.1s ease;
+}
+
+#divAddItem:active{
+  box-shadow: 0 0 0 #2e245e;
+}
+
+#divAddItem:hover{
+  animation: spin 3s linear infinite, inset 1px 1px 0 #2e245e;
+  transform: translate(2px, 2px);
+}
+
+.clothesAdd{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 267px;
+  height: 40px;
+  font-size: 16px;
+
+}
+
+.clothesAdd:hover {
+  text-decoration: underline;
+}
+
 .main-cards {
   min-height: 50vh;
   width: 75%;
@@ -142,162 +350,5 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.clothes-card{
-    display: flex;
-    justify-content: flex-start;
-    box-sizing: border-box;
-    gap: 15px 15px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: -13px 15px 15px 15px;
-    padding: 15px;
-    object-position: center;
-}
-
-.cards-list{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  background-color: #f5f5f5;
-  width: 270px;
-  height: 400px;
-  box-sizing: border-box;
-  padding-left: 15px;
-  text-align: justify;
-  border: 2px solid #f5f5f5;
-}
-
-.box:hover{
-  border: 2px solid #f5f5f5;
-  box-shadow: 15px 15px 10px -5px #868383;
-}
-
-.cards-list p {
-  border: 1px solid #f5f5f5;
-  cursor: pointer;
-}
-
-.Tag-card{
-  background-color: #37268C;
-  color: #ffffff;
-  width: 100px;
-  text-align: center;
-}
-
-.clothesButton{
-  border: none;
-  cursor: pointer;
-
-}
-
-button:houver{
-  text-decoration: underline;
-}
-
-
-.cart-products{
-  display: none;
-  flex-direction: row;
-  width: 300px;
-  height: 400px;
-  overflow-y: auto;
-  background-color: #f5f5f5;
-}
-
-.shopping-card{
-  display: flex;
-  justify-content: space-evenly;
-  height: 100px;
-  row-gap: 5px;
-
-}
-
-.shopping-card img{
-  width: 90px;
-  height: 90px;
-  border: 2px solid #f5f5f5;
-  height: auto;
-  box-sizing: border-box;
-
-}
-
-.clothesAdd{
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.clothesAdd:hover {
-  text-decoration: underline;
-}
-
-.removeItem{
-  cursor: pointer;
-}
-
-.removeItem:hover{
-  text-decoration: underline;
-}
-
-.shopping-detallhesitem{
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  background-color: #f5f5f5;
-  padding-left: 8px;
-}
-
-.shopping-detallhesitem p{
-  
-  font: 14px;
-  font-weight: 400;
-}
-
-.shopping-detallhesitem h2{
-  color: #333333;
-  font: 20px;
-  font-weight: bold;
-}
-
-.removeItem{
-  color: #333333;
-  font-size: 14px;
-  font-weight: 300;
-}
-
-.priceItemShopp{
-  color: #37268C;
-
-}
-
-.removeItem:hover{
-  color: rgba(255, 0, 0, 0.521);
-}
-
-.showcasePrice{
-  font-size: 20px;
-  font-weight: bold;
-  color: #2e245e;
-}
-
-.showcaseTag{
-  width: 90px;
-  height: 20px;
-  text-align: center;
-  font-size: 16px;
-  padding: 5px;
-  background-color: #2e245e;
-  color: #ffffff;
-}
-.showcaseName{
-  font-size: 16px;
-  font-weight: bold;
-}
-.showcaseDescription{
-  font-size: 14px;
-  font-weight: 300;
 }
 

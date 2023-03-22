@@ -6,6 +6,8 @@ let valueItems = document.querySelector(".valueItems");
 let itemsCount = 0;
 let amount = 0;
 
+/* ------------ Criação itens na vitrine  ------------*/
+
 function createListClothesCard (clothes){
     
     let clothesCard = document.createElement('li');
@@ -14,14 +16,15 @@ function createListClothesCard (clothes){
     let nameItemCard = document.createElement('h2');
     let descriptionCard = document.createElement('p');
     let valueCard = document.createElement('p');
-    let addCartCard = document.createElement('p');
+    let divButton = document.createElement('div')
+    let addCartCard = document.createElement('button');
 
     imgCard.src = clothes.img;
     tagCard.innerText = clothes.tag;
     nameItemCard.innerText = clothes.nameItem;
     descriptionCard.innerText = clothes.description;
     valueCard.innerText = `R$ ${clothes.value.toFixed(2)}`;
-    addCartCard.innerHTML = 'Adicionar ao carrinho';
+    addCartCard.innerHTML = `Adicionar ao carrinho &#128722`;
     addCartCard.id = `clothes_${clothes.id}`;
     addCartCard.classList.add('clothesAdd');
 
@@ -30,6 +33,7 @@ function createListClothesCard (clothes){
     valueCard.className = 'showcasePrice';
     tagCard.className = 'showcaseTag';
     nameItemCard.className = 'showcaseName';
+    divButton.id = 'divAddItem'
     descriptionCard.className = 'showcaseDescription';
 
     clothesCard.id = clothes.id;
@@ -39,7 +43,10 @@ function createListClothesCard (clothes){
     clothesCard.appendChild(nameItemCard);
     clothesCard.appendChild(descriptionCard);
     clothesCard.appendChild(valueCard);
-    clothesCard.appendChild(addCartCard);
+    clothesCard.appendChild(divButton)
+    divButton.appendChild(addCartCard);
+
+/* ------------ Eventos de adicionar, atualização de qtdes e valores dos Itens no Carrinho de compras ------------*/
 
 
     addCartCard.addEventListener('click', function(event){
@@ -60,7 +67,7 @@ function createListClothesCard (clothes){
         };
 
         amount += clothes.value;
-        valueItems.innerHTML = `${amount}`;
+        valueItems.innerHTML = `R$ ${amount.toFixed(2)}`;
 
         let clothesRender = renderClothes(id);
 
@@ -74,12 +81,16 @@ function createListClothesCard (clothes){
     return clothesCard;
 }
 
+/* ------------ adicinar itens na vitrine  ------------*/
+
 function listClothesWeartake (array, store) {
     for(let i = 0; i < array.length; i++){
         let result = createListClothesCard(array[i]);
         store.appendChild(result);
     }   
-}
+};
+
+/* ------------ adicionar itens no Carrinho de compras  ------------*/
 
 function renderClothes(id) {
     for(let i = 0; i< data.length; i++ ){
@@ -89,6 +100,7 @@ function renderClothes(id) {
     }
 };
 
+/* ------------ Criação itens no Carrinho de compras  ------------*/
 
 function createShoppingCart (items){
     let itemsCard = document.createElement('li');
@@ -96,12 +108,12 @@ function createShoppingCart (items){
     let divitens = document.createElement('div')
     let nameItemCard = document.createElement('h2');
     let valueCard = document.createElement('p');
-    let removeCartCard = document.createElement('p');
+    let removeCartCard = document.createElement('button');
     
     imgCard.src = items.img;
     nameItemCard.innerText = items.nameItem;
     valueCard.innerText = `R$ ${items.value.toFixed(2)}`;
-    removeCartCard.innerHTML = 'Remover produto';
+    removeCartCard.innerHTML = String.fromCodePoint(0x1F5D1);
     removeCartCard.id = `items_${items.id}`;
     removeCartCard.classList.add('removeItem');
 
@@ -118,8 +130,12 @@ function createShoppingCart (items){
     divitens.appendChild(nameItemCard);
     divitens.appendChild(valueCard);
     divitens.appendChild(removeCartCard);
-    
+
+
+/* ------------ Eventos de remoção, atualização de qtdes e valores dos Itens no Carrinho de compras ------------*/
+
     removeCartCard.addEventListener('click', function(event){
+        console.log(removeCartCard)
         let contar = 0;
         contar++
         
@@ -127,7 +143,7 @@ function createShoppingCart (items){
         countItems.innerHTML = `${itemsCount}`;
 
         amount -= items.value;
-        valueItems.innerHTML = `R$ ${amount}`;
+        valueItems.innerHTML = `R$ ${amount.toFixed(2)}`;
 
         let removerPath = event.composedPath();
         removerPath[2].remove();
@@ -145,6 +161,7 @@ function createShoppingCart (items){
     return itemsCard;
 }
 
+/* ------------ Filtro de produtos pelo menu de navegação ----------------------*/
 
 function filterItens (list, str) {
     let listTemp = [];
@@ -167,6 +184,7 @@ navMenu.addEventListener('click', function(event){
     filterItens (data, elemFilter);
 });
 
+/* ------------ Filtro de produtos por pesquina nome e Tag ----------------------*/
 
 function askingQuestion (searchQuestion, str){
     let lookingForAnswer = [];
